@@ -34,7 +34,7 @@ public class MachineLearningService : IMachineLearningService
                 outputColumnName: "Features",
                 options: new Microsoft.ML.Transforms.Text.TextFeaturizingEstimator.Options
                 {
-                    // TF-IDF ve N-Gram ayarları hocanın istediği gibi buradan yapılıyor
+                     
                     WordFeatureExtractor = new Microsoft.ML.Transforms.Text.WordBagEstimator.Options()
                     {
                         NgramLength = nGramRange,
@@ -44,7 +44,7 @@ public class MachineLearningService : IMachineLearningService
                 nameof(SentimentData.Text) 
             ));
 
-        // 3. Algoritmayı Seç (Strateji Deseni Mantığı)
+       
         IEstimator<ITransformer> trainer;
         if (algorithm.ToLower() == "naive_bayes")
         {
@@ -84,7 +84,7 @@ public class MachineLearningService : IMachineLearningService
         var input = new SentimentData { Text = text };
         var prediction = predEngine.Predict(input);
 
-        // 3. SİHİRLİ KISIM: Modelin içindeki Orijinal Etiket İsimlerini Çıkar
+         
         VBuffer<ReadOnlyMemory<char>> slotNames = default;
         predEngine.OutputSchema["Score"].Annotations.GetValue("SlotNames", ref slotNames);
 

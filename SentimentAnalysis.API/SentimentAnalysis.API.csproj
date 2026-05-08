@@ -18,4 +18,8 @@
     <ProjectReference Include="..\SentimentAnalysis.Infrastructure\SentimentAnalysis.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Uploads\" />
+  </ItemGroup>
+
 </Project>

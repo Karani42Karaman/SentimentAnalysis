@@ -16,6 +16,6 @@ public class FileService : IFileService
         using var fileStreamOnDisk = new FileStream(filePath, FileMode.Create);
         await fileStream.CopyToAsync(fileStreamOnDisk);
 
-        return filePath; // Modelin eğitilebilmesi için bu yolu geriye dönüyoruz
+        return filePath;  
     }
 }

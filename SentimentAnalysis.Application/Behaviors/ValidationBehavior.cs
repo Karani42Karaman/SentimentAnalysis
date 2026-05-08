@@ -30,7 +30,7 @@ public class ValidationBehavior<TRequest, TResponse> : IPipelineBehavior<TReques
 
         if (errors.Any())
         {
-            // Eğer TResponse bizim Result<> tipindeyse hataları içine basıp yollayacağız
+            
             var responseType = typeof(TResponse);
             if (responseType.IsGenericType && responseType.GetGenericTypeDefinition() == typeof(Result<>))
             {
